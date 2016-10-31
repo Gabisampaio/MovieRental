@@ -24,7 +24,7 @@ class Customer {
         int frequentRenterPoints = 0
         String result = "Rental Record for " + getName() + "\n"
         _rentals.each{ rental ->
-            double thisAmount = getCharge(rental)
+            double thisAmount = rental.getCharge()
             frequentRenterPoints += getPoints(rental)
             //show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t" + thisAmount + "\n"
@@ -44,27 +44,6 @@ class Customer {
         if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
             frequentRenterPoints++
         frequentRenterPoints
-    }
-
-    def double getCharge(List<Rental> rental) {
-        double thisAmount = 0
-        //determine amounts for aRental line
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2
-                if (rental.getDaysRented() > 2)
-                    thisAmount += (rental.getDaysRented() - 2) * 1.5
-                break
-            case Movie.NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * 3
-                break
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (rental.getDaysRented() > 3)
-                    thisAmount += (rental.getDaysRented() - 3) * 1.5
-                break
-        }
-        thisAmount
     }
 
     /*
