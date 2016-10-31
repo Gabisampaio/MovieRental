@@ -28,4 +28,8 @@ class Movie {
         _price.getCharge()
     }
 
+    int getPoints(int daysRented) {
+        return _price.getPoints(daysRented);
+    }
+
 }

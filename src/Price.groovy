@@ -9,6 +9,10 @@ abstract class Price {
 
     abstract int getPriceCode()
 
+    abstract double getCharge(int daysRented)
+
+    int getPoints(int daysRented){ 1 }
+
     static void newType(int code){
         switch (code) {
             case REGULAR:

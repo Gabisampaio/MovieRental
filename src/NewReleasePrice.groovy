@@ -12,4 +12,8 @@ class NewReleasePrice extends Price{
     double getCharge(int daysRented) {
         daysRented * 3
     }
+
+    int getPoints(int daysRented){
+        (daysRented > 1) ? 2 : 1
+    }
 }

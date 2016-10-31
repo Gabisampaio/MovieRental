@@ -24,8 +24,6 @@ class Rental {
     }
 
     def getPoints() {
-        // add bonus for a two day new release rental
-        def extraPoint = (this.getMovie().getType() == Movie.NEW_RELEASE) && this.getDaysRented() > 1
-        extraPoint ? 2 : 1
+        this.getMovie().getPoints(daysRented)
     }
 }
