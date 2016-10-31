@@ -41,10 +41,8 @@ class Rental {
     }
 
     def getPoints() {
-        int frequentRenterPoints = 1
         // add bonus for a two day new release rental
-        if ((this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDaysRented() > 1)
-            frequentRenterPoints = 2
-        frequentRenterPoints
+        def extraPoint = (this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDaysRented() > 1
+        extraPoint ? 2 : 1
     }
 }
