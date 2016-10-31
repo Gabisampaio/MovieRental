@@ -7,4 +7,12 @@ class RegularPrice extends Price{
     int getPriceCode() {
         REGULAR
     }
+
+    @Override
+    double getCharge(int daysRented) {
+        double amount = 2
+        if (daysRented > 2)
+            amount += (daysRented - 2) * 1.5
+        amount
+    }
 }

@@ -19,25 +19,8 @@ class Rental {
         _movie
     }
 
-    def double getCharge() {
-        double amount = 0
-        //determine amounts for aRental line
-        switch (this.getMovie().getType()) {
-            case Movie.REGULAR:
-                amount += 2
-                if (this.getDaysRented() > 2)
-                    amount += (this.getDaysRented() - 2) * 1.5
-                break
-            case Movie.NEW_RELEASE:
-                amount += this.getDaysRented() * 3
-                break
-            case Movie.CHILDRENS:
-                amount += 1.5;
-                if (this.getDaysRented() > 3)
-                    amount += (this.getDaysRented() - 3) * 1.5
-                break
-        }
-        amount
+    double getCharge() {
+        this.getMovie().getCharge(daysRented)
     }
 
     def getPoints() {

@@ -24,4 +24,8 @@ class Movie {
         _price.newType(code)
     }
 
+    double getCharge(int daysRented){
+        _price.getCharge()
+    }
+
 }

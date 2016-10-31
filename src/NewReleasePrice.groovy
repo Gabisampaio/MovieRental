@@ -5,6 +5,11 @@ class NewReleasePrice extends Price{
 
     @Override
     int getPriceCode() {
-        Movie.NEW_RELEASE
+        NEW_RELEASE
+    }
+
+    @Override
+    double getCharge(int daysRented) {
+        daysRented * 3
     }
 }
