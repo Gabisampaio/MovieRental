@@ -7,7 +7,7 @@ class Movie {
     static final int CHILDRENS = 2
     static final int REGULAR = 0
     static final int NEW_RELEASE = 1
-    int _type
+    Price _price
 
 
     Movie(String title, int priceCode) {
@@ -20,11 +20,23 @@ class Movie {
     }
 
     def getType(){
-        _type
+        _price.getPriceCode()
     }
 
-    def setType(int type){
-        _type = type
+    def setType(int code){
+        switch (code) {
+            case REGULAR:
+                new RegularPrice()
+                break
+            case NEW_RELEASE:
+                new NewReleasePrice()
+                break
+            case CHILDRENS:
+                new ChildrensPrice()
+                break
+            default:
+                throw new IllegalArgumentException("Incorrect Price Code");
+        }
     }
 
 }
