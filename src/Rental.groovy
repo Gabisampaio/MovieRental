@@ -41,7 +41,7 @@ class Rental {
     }
 
     def getPoints() {
-        int frequentRenterPoints
+        int frequentRenterPoints = 0
         // add frequent renter points
         frequentRenterPoints++
         // add bonus for a two day new release rental
