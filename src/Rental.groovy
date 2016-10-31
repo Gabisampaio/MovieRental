@@ -22,7 +22,7 @@ class Rental {
     def double getCharge() {
         double amount = 0
         //determine amounts for aRental line
-        switch (this.getMovie().getPriceCode()) {
+        switch (this.getMovie().getType()) {
             case Movie.REGULAR:
                 amount += 2
                 if (this.getDaysRented() > 2)
@@ -42,7 +42,7 @@ class Rental {
 
     def getPoints() {
         // add bonus for a two day new release rental
-        def extraPoint = (this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDaysRented() > 1
+        def extraPoint = (this.getMovie().getType() == Movie.NEW_RELEASE) && this.getDaysRented() > 1
         extraPoint ? 2 : 1
     }
 }
