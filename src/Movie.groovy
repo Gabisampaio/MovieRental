@@ -7,24 +7,24 @@ class Movie {
     static final int CHILDRENS = 2
     static final int REGULAR = 0
     static final int NEW_RELEASE = 1
-    int _priceCode
+    int _type
 
 
     Movie(String title, int priceCode) {
         _title = title
-        _priceCode = priceCode
+        setType(_type)
     }
 
     def getTitle(){
         _title
     }
 
-    def getPriceCode(){
-        _priceCode
+    def getType(){
+        _type
     }
 
-    def setPriceCode(int priceCode){
-        _priceCode = priceCode
+    def setType(int type){
+        _type = type
     }
 
 }
