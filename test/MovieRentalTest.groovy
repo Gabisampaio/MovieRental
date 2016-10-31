@@ -13,7 +13,7 @@ class MovieRentalTest extends Specification {
 
     def "Regular movie report test"(){
         given:
-        Rental rental = new Rental(new Movie(REGULAR_MOVIE,Movie.REGULAR),4)
+        Rental rental = new Rental(new Movie(REGULAR_MOVIE,Price.REGULAR),4)
         Customer customer = new Customer(CUSTOMER_NAME)
         when:
         customer.addRental(rental)
@@ -24,7 +24,7 @@ class MovieRentalTest extends Specification {
 
     def "Childrens movie report test"(){
         given:
-        Rental rental = new Rental(new Movie(CHILDRENS_MOVIE,Movie.CHILDRENS),5)
+        Rental rental = new Rental(new Movie(CHILDRENS_MOVIE,Price.CHILDRENS),5)
         Customer customer = new Customer(CUSTOMER_NAME)
         when:
         customer.addRental(rental)
@@ -35,7 +35,7 @@ class MovieRentalTest extends Specification {
 
     def "New release movie report test"(){
         given:
-        Rental rental = new Rental(new Movie(NEW_RELEASE_MOVIE,Movie.NEW_RELEASE),0)
+        Rental rental = new Rental(new Movie(NEW_RELEASE_MOVIE,Price.NEW_RELEASE),0)
         Customer customer = new Customer(CUSTOMER_NAME)
         when:
         customer.addRental(rental)
@@ -47,9 +47,9 @@ class MovieRentalTest extends Specification {
     def "Three movies report test"(){
         given:
         Customer customer = new Customer(CUSTOMER_NAME)
-        Movie m1 = new Movie(NEW_RELEASE_MOVIE,Movie.NEW_RELEASE)
-        Movie m2 = new Movie(REGULAR_MOVIE,Movie.REGULAR)
-        Movie m3 = new Movie(CHILDRENS_MOVIE,Movie.CHILDRENS)
+        Movie m1 = new Movie(NEW_RELEASE_MOVIE,Price.NEW_RELEASE)
+        Movie m2 = new Movie(REGULAR_MOVIE,Price.REGULAR)
+        Movie m3 = new Movie(CHILDRENS_MOVIE,Price.CHILDRENS)
         when:
         customer.addRental(new Rental(m1,2))
         customer.addRental(new Rental(m2,4))
