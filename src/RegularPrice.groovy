@@ -5,6 +5,6 @@ class RegularPrice extends Price{
 
     @Override
     int getPriceCode() {
-        Movie.REGULAR
+        REGULAR
     }
 }

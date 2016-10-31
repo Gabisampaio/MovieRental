@@ -5,6 +5,6 @@ class ChildrensPrice extends Price{
 
     @Override
     int getPriceCode() {
-        Movie.CHILDRENS
+        CHILDRENS
     }
 }
