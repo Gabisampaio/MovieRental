@@ -13,7 +13,7 @@ abstract class Price {
 
     int getPoints(int daysRented){ 1 }
 
-    static void newType(int code){
+    static Price newType(int code){
         switch (code) {
             case REGULAR:
                 new RegularPrice()
