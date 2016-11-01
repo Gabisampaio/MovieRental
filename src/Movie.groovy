@@ -9,7 +9,7 @@ class Movie {
 
     Movie(String title, int priceCode) {
         _title = title
-        setType(priceCode)
+        _price = setType(priceCode)
     }
 
     def getTitle(){
@@ -21,11 +21,11 @@ class Movie {
     }
 
     def setType(int code){
-        _price.newType(code)
+        Price.newType(code)
     }
 
     double getCharge(int daysRented){
-        _price.getCharge()
+        _price.getCharge(daysRented)
     }
 
     int getPoints(int daysRented) {
